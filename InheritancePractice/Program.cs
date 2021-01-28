@@ -25,3 +25,45 @@ namespace Problem1
         }
     }
 }
+
+namespace Problem2
+{
+    public class Animal
+    {
+        public string name { set; get; }
+        public string birthMethod { set; get; }
+
+        public Animal()
+        {
+            this.name = "";
+            this.birthMethod = "";
+        }
+
+        public Animal(string name, string birthMethod)
+        {
+            this.name = name;
+            this.birthMethod = birthMethod;
+        }
+
+        public string GiveBirth()
+        {
+            return this.birthMethod;
+        }
+    }
+
+    public class Bird : Animal
+    {
+        bool flies;
+
+        public Bird() : base()
+        {
+            this.flies = true;
+        }
+
+        public Bird(string name, bool flies)
+            : base(name, "eggs")
+        {
+            this.flies = flies;
+        }
+    }
+}
